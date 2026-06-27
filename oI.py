@@ -1,4 +1,14 @@
-hereimport zipfile, base64, re, os, shutil, time
+import subprocess, sys, os
+
+# تثبيت المكتبات المطلوبة
+required = ["pyrogram", "telebot", "bvloader"]
+for lib in required:
+    try:
+        __import__(lib)
+    except ImportError:
+        subprocess.run([sys.executable, "-m", "pip", "install", lib])
+
+import zipfile, base64, re, os, shutil, time
 import telebot
 import subprocess, sys
 BOT_TOKEN = "7544274862:AAEKzlOillNr6pM6SDA1NQOv0h1boGbgtqg"
